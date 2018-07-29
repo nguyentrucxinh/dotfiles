@@ -17,6 +17,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Initialize plugin system
 call plug#end()
@@ -64,6 +66,10 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
 
+set showbreak=↪
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+
 "set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 "set listchars+=space:␣
 "set nolist
@@ -82,6 +88,15 @@ nmap <Leader>ev :tabedit ~/.vimrc<cr>
 
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
+
+"Automatically append closing characters
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 "-----------Auto-Commands--------------
 
@@ -114,3 +129,4 @@ let NERDTreeHijackNetrw = 0
 "Make NERDTree easier to toggle"
 nmap <leader>1 :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
+
