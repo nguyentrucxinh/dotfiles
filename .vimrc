@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
@@ -12,6 +12,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'mattn/emmet-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Initialize plugin system
 call plug#end()
@@ -51,6 +56,7 @@ set expandtab                               " Use spaces instead of tabs.
 set laststatus=2                            " Always show the statusbar.
 
 set autoindent
+set encoding=UTF-8
 
 set cursorline
 highlight clear CursorLine
@@ -93,7 +99,7 @@ autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
 "/
 "/ CtrlP
 "/
-let g:ctrlp_custom_ignore = 'node_modules\vendor\DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 
 nmap <D-p> :CtrlP<cr>
@@ -107,7 +113,4 @@ let NERDTreeHijackNetrw = 0
 
 "Make NERDTree easier to toggle"
 nmap <leader>1 :NERDTreeToggle<cr>
-
-"/
-"/ IndentLine
-"/
+let NERDTreeShowHidden=1
