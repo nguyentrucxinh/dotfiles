@@ -69,9 +69,6 @@ highlight CursorLine guibg=#303000 ctermbg=234
 set showbreak=↪
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
-
-"set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-"set listchars+=space:␣
 "set nolist
 
 let mapleader = ','
@@ -88,15 +85,6 @@ nmap <Leader>ev :tabedit ~/.vimrc<cr>
 
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
-
-"Automatically append closing characters
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
 
 "-----------Auto-Commands--------------
 
