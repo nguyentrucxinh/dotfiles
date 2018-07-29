@@ -80,15 +80,15 @@ set incsearch
 
 "-----------Mappings--------------
 
-"Make it easy to edit the Vimrc file.
+" Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit ~/.vimrc<cr>
 
-"Add simple highlight removal.
+" Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
 "-----------Auto-Commands--------------
 
-"Automatically source the Vimrc on save.
+" Automatically source the Vimrc on save.
 augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
