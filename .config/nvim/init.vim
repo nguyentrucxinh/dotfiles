@@ -1,31 +1,41 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'w0rp/ale'
-Plug 'severin-lemaignan/vim-minimap'
+" ---On-demand loading---
+" UI
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " <leader>1
 Plug 'airblade/vim-gitgutter'
-Plug 'jiangmiao/auto-pairs'
-Plug 'leafgarland/typescript-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Color schemes
 Plug 'icymind/NeoSolarized'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'itchyny/lightline.vim'
+" Utilities
+Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
+Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim' " <c-p> <c-t>
+Plug 'mattn/emmet-vim' " <c-y>,
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 
 call plug#end()
 
+" ---My config---
 let mapleader = ','
-set number
+set number				    " Line number
 set ignorecase                              " Case-insensitive searching.
 set smartcase                               " But case-sensitive if expression contains a capital letter.
-set autoread
-syntax enable
-
-set background=dark
-colorscheme palenight
-"colorscheme NeoSolarized
+set autoread				    " Auto reload file if change from disk
+syntax enable				    " Highlight syntax
+set background=dark			    " Background
+colorscheme palenight			    " Color scheme
 
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -35,7 +45,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-"let g:lightline.colorscheme = 'palenight'
+
+" ---Mapping---
 
 " Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit ~/.config/nvim/init.vim<cr>
@@ -48,6 +59,9 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost ~/.config/nvim/init.vim source %
 augroup END
+
+
+" ---Plugin config---
 
 "/
 ""/ fzf
@@ -63,3 +77,9 @@ let NERDTreeHijackNetrw = 0
 "Make NERDTree easier to toggle"
 nmap <leader>1 :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
+
+"/
+"/ Airline
+"/
+let g:airline#extensions#tabline#enabled = 1
+
