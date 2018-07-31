@@ -19,6 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jiangmiao/auto-pairs'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'bagrat/vim-workspace'
 
 " Initialize plugin system
 call plug#end()
@@ -71,6 +72,17 @@ set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 "set nolist
 
+set spell
+
+set background=dark
+"colorscheme gruvbox
+
+set guifont=Fira\ Code:h14
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=longest,menuone
+
 let mapleader = ','
 
 "-----------Search--------------
@@ -117,4 +129,3 @@ let NERDTreeHijackNetrw = 0
 "Make NERDTree easier to toggle"
 nmap <leader>1 :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
-
