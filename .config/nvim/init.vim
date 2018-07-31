@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " <leader>1
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -12,7 +13,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'icymind/NeoSolarized'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'itchyny/lightline.vim'
 " Utilities
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
@@ -24,6 +24,11 @@ Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tpope/vim-commentary' " gcc
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim', {'do':'npm install '}
 
 call plug#end()
 
