@@ -17,18 +17,20 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
-Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " <c-p> <c-t>
 Plug 'mattn/emmet-vim' " <c-y>,
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-commentary' " gcc
-Plug 'Valloric/YouCompleteMe'
-Plug 'ternjs/tern_for_vim', {'do':'npm install '}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+" Language
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
 
 call plug#end()
 
@@ -87,4 +89,3 @@ let NERDTreeShowHidden=1
 "/ Airline
 "/
 let g:airline#extensions#tabline#enabled = 1
-
